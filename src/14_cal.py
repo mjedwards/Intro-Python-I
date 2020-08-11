@@ -30,3 +30,28 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+
+# print(calendar.month(2020, 7))
+
+# explanation = input("date input should follow this structure, file.py year month (file.py 2020 7). Supply the file followed by the year and the month. Make sure each argument is separated by a space. If data is not provided it will default to the current year and month: Click enter")
+
+# print(explanation)
+
+today = datetime.today()
+
+
+
+def show_calendar():
+    if len(sys.argv) > 1:
+        year = int(sys.argv[1])
+        month = int(sys.argv[2])
+        print(calendar.month(year, month))
+    else:
+        year = today.year 
+        month = today.month
+        print(calendar.month(year, month))
+        
+       
+
+
+show_calendar()
